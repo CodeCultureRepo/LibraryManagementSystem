@@ -9,18 +9,18 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+// Login endpoint (existing code)
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
     // Query to check user credentials
-    const query = 'SELECT * FROM Info_Users WHERE UserName = ? AND Password = ?';
+    const query = 'SELECT * FROM Info_User WHERE UserName = ? AND Password = ?';
     connection.query(query, [username, password], (err, results) => {
         if (err) {
             res.status(500).send('Error connecting to the database.');
             return;
         }
 
-        // Check if any user matched the credentials
         if (results.length > 0) {
             res.send('Login successful!');
         } else {
@@ -28,6 +28,22 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
+// New register endpoint
+app.post('/register', (req, res) => {
+    const { first_name, last_name, username, password } = req.body;
+
+    const query = 'INSERT INTO Info_User (Name, LastName, UserName, Password) VALUES (?, ?, ?, ?)';
+    connection.query(query, [first_name, last_name, username, password], (err, results) => {
+        if (err) {
+            console.error("Error executing query:", err); // Log the error details
+            res.status(500).send('Error registering the user.');
+            return;
+        }
+        res.send('Registration successful!');
+    });
+});
+
 
 // Start server
 app.listen(PORT, () => {

@@ -6,8 +6,12 @@ const connection = mysql.createConnection({
     database: 'library_management'
 });
 
+// connection.js
 connection.connect((err) => {
-    if (err) throw err;
+    if (err) {
+        console.error("Database connection failed:", err.stack);
+        return;
+    }
     console.log("Connected to the MySQL database!");
 });
 
