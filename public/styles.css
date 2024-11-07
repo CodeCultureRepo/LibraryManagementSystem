@@ -21,7 +21,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #add8e6; /* Baby blue background */
+    background-color: #add8e6; 
 }
 
 .logo {
@@ -33,12 +33,12 @@ header {
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: white; /* White links on baby blue background */
+    color: white; 
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #0056b3; /* Darker blue for hover effect */
+    color: #0056b3; 
 }
 
 /* Centered Form Styling */
