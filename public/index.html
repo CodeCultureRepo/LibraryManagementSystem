@@ -13,7 +13,7 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="catalog.html">Catalog</a>
-            <a href="account.html">My Account</a>
+            <a id="account-tab" href="account.html" style="display: none;">My Account</a>
             <a href="admin.html">Admin</a>
         </nav>
     </header>
@@ -37,26 +37,34 @@
         <!-- Featured Books Section -->
         <section class="featured-books">
             <div class="book">
-                <img src="../images/million.png" alt="Featured Book 1">
-                <p>Featured Book1</p>
+                <img src="million.png" alt="Featured Book 1">
+                <p>A Million To One</p>
             </div>
             <div class="book">
-                <img src="../images/mountain.png" alt="Featured Book 2">
-                <p>Featured Book2</p>
+                <img src="mountain.png" alt="Featured Book 2">
+                <p>The Light Beyond The Garden Wall</p>
             </div>
             <div class="book">
-                <img src="../images/Soul.png" alt="Featured Book 3">
-                <p>Featured Book3</p>
+                <img src="Soul.png" alt="Featured Book 3">
+                <p>Soul</p>
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
     <footer>
-        [Footer]
+        <p>&copy; 2024 Library Management System</p>
     </footer>
-
-    <!-- Scripts -->
+    
     <script src="server.js"></script>
+    <script>
+        // Check login status and display the account tab if logged in
+        fetch('/login-status')
+            .then(response => response.json())
+            .then(data => {
+                if (data.loggedIn) {
+                    document.getElementById('account-tab').style.display = 'inline';
+                }
+            })
+            .catch(error => console.error('Error fetching login status:', error));
+    </script>
 </body>
 </html>
