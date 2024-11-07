@@ -5,23 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Catalog</title>
-    <style>
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-        .book {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <img src="images\LMS_image.png" class="logo">
+        <img src="LMS_image.jpg" class="logo" alt="Library Logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="catalog.html">Catalog</a>
@@ -29,16 +17,124 @@
             <a href="admin.html">Admin</a>
         </nav>
     </header>
-    <h2>Catalog</h2>
-    <div class="book-grid">
-        <!-- Sample Book Item -->
-        <div class="book">
-            <h3>Book Title</h3>
-            <p>Author</p>
-            <p>Published Year</p>
-            <p>Available: Yes/No</p>
+
+    <main>
+        <h2>Catalog</h2>
+        <div class="book-grid">
+            <!-- Each book has unique details and images -->
+            <div class="book">
+                <img src="million.png" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">A Million to One</h3>
+                <p class="book-author">Thomas J. Stanley</p>
+                <p class="book-publisher">Random House</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+            
+            <div class="book">
+                <img src="soul.png" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">Soul</h3>
+                <p class="book-author">Elizabeth Stevens</p>
+                <p class="book-publisher">Penguin Books</p>
+                <p class="book-availability">Available: No</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="secretGarden.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">The Secret Garden</h3>
+                <p class="book-author">Frances Hodgson Burnett</p>
+                <p class="book-publisher">HarperCollins</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="pride-prejudice-13.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">Pride and Prejudice</h3>
+                <p class="book-author">Jane Austen</p>
+                <p class="book-publisher">Oxford Press</p>
+                <p class="book-availability">Available: No</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="alchemist.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">The Alchemist</h3>
+                <p class="book-author">Paulo Coelho</p>
+                <p class="book-publisher">HarperOne</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="davincicode.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">The Da Vinci Code</h3>
+                <p class="book-author">Dan Brown</p>
+                <p class="book-publisher">Doubleday</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="warandpeace.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">War and Peace</h3>
+                <p class="book-author">Leo Tolstoy</p>
+                <p class="book-publisher">Vintage Books</p>
+                <p class="book-availability">Available: No</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="mobydick.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">Moby Dick</h3>
+                <p class="book-author">Herman Melville</p>
+                <p class="book-publisher">Penguin Classics</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="ulysses-16.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">Ulysses</h3>
+                <p class="book-author">James Joyce</p>
+                <p class="book-publisher">Modern Library</p>
+                <p class="book-availability">Available: No</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="1984.webp" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">1984</h3>
+                <p class="book-author">George Orwell</p>
+                <p class="book-publisher">Houghton Mifflin</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="tokillamockingbird.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">To Kill a Mockingbird</h3>
+                <p class="book-author">Harper Lee</p>
+                <p class="book-publisher">J.B. Lippincott</p>
+                <p class="book-availability">Available: Yes</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
+
+            <div class="book">
+                <img src="the-lord-of-the-rings-the-fellowship-of-the-ring-the-two-towers-the-return-of-the-king.jpg" alt="Book Cover" class="book-cover">
+                <h3 class="book-title">The Lord of the Rings</h3>
+                <p class="book-author">J.R.R. Tolkien</p>
+                <p class="book-publisher">Allen & Unwin</p>
+                <p class="book-availability">Available: No</p>
+                <button onclick="" class="btn">Take Out</button>
+            </div>
         </div>
-        <!-- Repeat for each book -->
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Library Management System</p>
+    </footer>
 </body>
 </html>
