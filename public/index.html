@@ -7,9 +7,56 @@
     <title>Library Management System</title>
 </head>
 <body>
-    <h1>Welcome to the Library Management System</h1>
-    <button onclick="window.location.href='addBook.html'">Add Book</button>
-    <button onclick="window.location.href='borrowBook.html'">Borrow Book</button>
-    <script src="script.js"></script>
+    <!-- Header Section -->
+    <header>
+        <img src="LMS_image.jpg" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="account.html">My Account</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Library Management System</h1>
+        <p>Let's get your book ready for you</p>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" placeholder="Search for Books">
+        </div>
+
+        <!-- Login and Register Buttons -->
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'" class="btn">Login</button>
+            <button onclick="window.location.href='register.html'" class="btn secondary">Register</button>
+        </div>
+
+        <!-- Featured Books Section -->
+        <section class="featured-books">
+            <div class="book">
+                <img src="../images/million.png" alt="Featured Book 1">
+                <p>Featured Book1</p>
+            </div>
+            <div class="book">
+                <img src="../images/mountain.png" alt="Featured Book 2">
+                <p>Featured Book2</p>
+            </div>
+            <div class="book">
+                <img src="../images/Soul.png" alt="Featured Book 3">
+                <p>Featured Book3</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        [Footer]
+    </footer>
+
+    <!-- Scripts -->
+    <script src="server.js"></script>
 </body>
 </html>
