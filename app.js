@@ -11,15 +11,40 @@ app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
 
-// Endpoint to add a book
-app.post('/addBook', (req, res) => {
-    const { title, author } = req.body;
-    const query = 'INSERT INTO books (title, author, is_available) VALUES (?, ?, true)';
-    connection.query(query, [title, author], (err, result) => {
+
+// Endpoint to fetch all books
+app.get('/books', (req, res) => {
+    const query = 'SELECT title, author, publisher, is_available, cover_image FROM books';
+    connection.query(query, (err, results) => {
         if (err) throw err;
-        res.send('Book added successfully!');
+        res.json(results);
     });
 });
+
+// app.js
+
+// Endpoint to add a new book
+app.post('/addBook', (req, res) => {
+    const { title, author, publisher, is_available } = req.body;
+    const query = 'INSERT INTO info_books (title, author, publisher, availablility) VALUES (?, ?, ?, ?)';
+    connection.query(query, [title, author, publisher, is_available], (err, result) => {
+        if (err) return res.status(500).send("Error adding book.");
+        res.send("Book added successfully!");
+    });
+});
+
+// Endpoint to delete a book by title
+app.delete('/deleteBook', (req, res) => {
+    const title = req.query.title;
+    const query = 'DELETE FROM info_books WHERE title = ?';
+    connection.query(query, [title], (err, result) => {
+        if (err) return res.status(500).send("Error deleting book.");
+        if (result.affectedRows === 0) return res.send("Book not found.");
+        res.send("Book deleted successfully!");
+    });
+});
+
+
 
 // Endpoint to return a book and calculate fine
 app.post('/returnBook', (req, res) => {
@@ -40,4 +65,5 @@ app.post('/returnBook', (req, res) => {
             res.send(`Book returned! Fine: $${fine.toFixed(2)}`);
         });
     });
+    
 });
